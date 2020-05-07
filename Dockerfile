@@ -66,9 +66,7 @@ RUN set -x && \
     wget -nv -O upload/include/plugins/auth-ldap.phar https://s3.amazonaws.com/downloads.osticket.com/plugin/auth-ldap.phar && \
     # Create msmtp log
     touch /var/log/msmtp.log && \
-    chown www-data:www-data /var/log/msmtp.log && \
-    # File upload permissions
-    chown nginx:www-data /var/tmp/nginx && chmod g+rx /var/tmp/nginx
+    chown www-data:www-data /var/log/msmtp.log
 COPY files/ /
 VOLUME ["/data/upload/include/plugins","/data/upload/include/i18n","/var/log/nginx"]
 EXPOSE 80
